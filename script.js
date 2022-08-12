@@ -1,5 +1,7 @@
+// library array
 let myLibrary = [];
 
+// object constructor for library
 function Book(title, author, pages) {
   this.title = title;
   this.author = author;
@@ -14,6 +16,7 @@ function Book(title, author, pages) {
   }
 }
 
+// prototypes for read status 
 Book.prototype.readTrue = function() {
     this.read = true;
 }
@@ -26,7 +29,7 @@ function addBookToLibrary() {
   // adds book to library
 }
 
-//test
+// test
 let bookOne = new Book('The Hobbit', 'Tolkien', 150);
 console.log(bookOne.info());
 bookOne.readTrue();
