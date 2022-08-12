@@ -1,0 +1,49 @@
+
+/* form */
+form {
+    max-width: 400px;
+    margin: 10px auto;
+    padding: 10px 20px;
+    background: #f4f7f8;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px
+  }
+
+input[type="text"],
+input[type="number"],
+textarea,
+select {
+  background: rgba(255,255,255,0.1);
+  border: none;
+  font-size: 16px;
+  height: auto;
+  margin: 0;
+  outline: 0;
+  padding-bottom: 10px;
+  width: 100%;
+  background-color: #e8eeef;
+  color: rgb(0, 0, 0);
+  margin-bottom: 30px;
+}
+
+select {
+    padding: 6px;
+    height: 32px;
+    border-radius: 2px;
+}
+
+input[type="submit"] {
+    padding: 18px 39px 18px 39px;
+    color: #FFF;
+    background-color: #4bc970;
+    font-size: 18px;
+    text-align: center;
+    font-style: normal;
+    border-radius: 5px;
+    width: 100%;
+    border: 1px solid #3ac162;
+    border-width: 1px 1px 3px;
+    margin-bottom: 10px;
+}
