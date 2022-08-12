@@ -26,12 +26,9 @@ Book.prototype.readFalse = function() {
 }
 
 // adds book to library
-function addBookToLibrary() {
-  myLibrary.push(new Book('Test One', 'Christian', 420));
-  myLibrary.push(new Book('Test Two', 'Anthony', 69));
+function addBookToLibrary(title, author, pages) {
+  myLibrary.push(new Book(title, author, pages));
   console.log(myLibrary);
-  console.log(myLibrary[0]);
-  console.log(myLibrary[1]);
 }
 
 // test
