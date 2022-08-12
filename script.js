@@ -25,8 +25,13 @@ Book.prototype.readFalse = function() {
     this.read = false;
 }
 
+// adds book to library
 function addBookToLibrary() {
-  // adds book to library
+  myLibrary.push(new Book('Test One', 'Christian', 420));
+  myLibrary.push(new Book('Test Two', 'Anthony', 69));
+  console.log(myLibrary);
+  console.log(myLibrary[0]);
+  console.log(myLibrary[1]);
 }
 
 // test
@@ -34,3 +39,5 @@ let bookOne = new Book('The Hobbit', 'Tolkien', 150);
 console.log(bookOne.info());
 bookOne.readTrue();
 console.log(bookOne.info());
+
+addBookToLibrary();
