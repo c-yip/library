@@ -4,7 +4,7 @@ let myLibrary = [
     title: 'Dune',
     author: 'Frank Herbert',
     pages: '412',
-    read: 'read',
+    read: 'yes',
     info: function () {
       if (this.read === false) {
           return `The ${title} by ${author}, ${pages} pages, not read yet`;
@@ -18,7 +18,7 @@ let myLibrary = [
     title: 'The Hobbit',
     author: 'J. R. R. Tolkien',
     pages: '310',
-    read: 'read',
+    read: 'no',
     info: function () {
       if (this.read === false) {
           return `The ${title} by ${author}, ${pages} pages, not read yet`;
@@ -67,6 +67,8 @@ form.addEventListener('submit', e => {
   console.log(value);
   myLibrary.push(new Book(title, author, pages, value));
   console.log(myLibrary);
+
+  displayNewBook();
 });
 
 // add entire library to main content
@@ -78,6 +80,7 @@ function displayLibrary() {
         <h2>Title: ${book.title}</h2>
         <h2>Author: ${book.author}</h2>
         <h2>Pages: ${book.pages}</h2>
+        <h2>Read?: ${book.read}</h2>
       </div>
       `;
     newDiv.innerHTML = libraryContent;
@@ -96,6 +99,7 @@ function displayNewBook() {
     <h2>Title: ${newBook.title}</h2>
     <h2>Author: ${newBook.author}</h2>
     <h2>Pages: ${newBook.pages}</h2>
+    <h2>Read?: ${newBook.read}</h2>
   </div>
   `;
   newDiv.innerHTML = libraryContent;
