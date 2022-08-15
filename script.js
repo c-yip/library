@@ -1,5 +1,19 @@
 // library array
-let myLibrary = [];
+let myLibrary = [
+  {
+    title: 'title',
+    author: 'author',
+    pages: 'pages',
+    read: 'read',
+    info: function () {
+    if (this.read === false) {
+        return `The ${title} by ${author}, ${pages} pages, not read yet`;
+    } else {
+        return `The ${title} by ${author}, ${pages} pages, has been read`;
+    }
+  }
+  }
+];
 
 // object constructor for library
 function Book(title, author, pages, read) {
@@ -41,4 +55,16 @@ form.addEventListener('submit', e => {
   console.log(myLibrary);
 });
 
-// add content
+// add library to main content
+myLibrary.forEach(book => {
+  newDiv = document.createElement('div');
+  bookCard = `
+    <div class="card">
+      <h2>Title: ${book.title}</h2>
+      <h2>Author: ${book.author}</h2>
+      <h2>Pages: ${book.pages}</h2>
+    </div>
+    `;
+  newDiv.innerHTML = bookCard;
+  mainContent.appendChild(newDiv);
+});
