@@ -1,17 +1,31 @@
 // library array
 let myLibrary = [
   {
-    title: 'title',
-    author: 'author',
-    pages: 'pages',
+    title: 'Dune',
+    author: 'Frank Herbert',
+    pages: '412',
     read: 'read',
     info: function () {
-    if (this.read === false) {
-        return `The ${title} by ${author}, ${pages} pages, not read yet`;
-    } else {
-        return `The ${title} by ${author}, ${pages} pages, has been read`;
+      if (this.read === false) {
+          return `The ${title} by ${author}, ${pages} pages, not read yet`;
+      } else {
+          return `The ${title} by ${author}, ${pages} pages, has been read`;
+      }
     }
-  }
+  },
+
+  {
+    title: 'The Hobbit',
+    author: 'J. R. R. Tolkien',
+    pages: '310',
+    read: 'read',
+    info: function () {
+      if (this.read === false) {
+          return `The ${title} by ${author}, ${pages} pages, not read yet`;
+      } else {
+          return `The ${title} by ${author}, ${pages} pages, has been read`;
+      }
+    }
   }
 ];
 
@@ -55,7 +69,7 @@ form.addEventListener('submit', e => {
   console.log(myLibrary);
 });
 
-// add library to main content
+// add entire library to main content
 function displayLibrary() {
   myLibrary.forEach(book => {
     newDiv = document.createElement('div');
@@ -71,4 +85,19 @@ function displayLibrary() {
   });
 }
 
-displayLibrary();
+mainContent.onload = displayLibrary();
+
+// display new book
+function displayNewBook() {
+  newDiv = document.createElement('div');
+  newBook = myLibrary.at(-1);
+  libraryContent = `
+  <div class="card">
+    <h2>Title: ${newBook.title}</h2>
+    <h2>Author: ${newBook.author}</h2>
+    <h2>Pages: ${newBook.pages}</h2>
+  </div>
+  `;
+  newDiv.innerHTML = libraryContent;
+  mainContent.appendChild(newDiv);
+}
