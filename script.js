@@ -56,15 +56,19 @@ form.addEventListener('submit', e => {
 });
 
 // add library to main content
-myLibrary.forEach(book => {
-  newDiv = document.createElement('div');
-  bookCard = `
-    <div class="card">
-      <h2>Title: ${book.title}</h2>
-      <h2>Author: ${book.author}</h2>
-      <h2>Pages: ${book.pages}</h2>
-    </div>
-    `;
-  newDiv.innerHTML = bookCard;
-  mainContent.appendChild(newDiv);
-});
+function displayLibrary() {
+  myLibrary.forEach(book => {
+    newDiv = document.createElement('div');
+    libraryContent = `
+      <div class="card">
+        <h2>Title: ${book.title}</h2>
+        <h2>Author: ${book.author}</h2>
+        <h2>Pages: ${book.pages}</h2>
+      </div>
+      `;
+    newDiv.innerHTML = libraryContent;
+    mainContent.appendChild(newDiv);
+  });
+}
+
+displayLibrary();
