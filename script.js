@@ -26,12 +26,6 @@ Book.prototype.readFalse = function() {
 }
 
 // adds book to library
-// function addBookToLibrary(title, author, pages) {
-//   myLibrary.push(new Book(title, author, pages));
-//   console.log(myLibrary);
-// }
-
-// text to main content
 const mainContent = document.querySelector('.main-content');
 const form = document.querySelector('form');
 
@@ -46,3 +40,5 @@ form.addEventListener('submit', e => {
   myLibrary.push(new Book(title, author, pages, value));
   console.log(myLibrary);
 });
+
+// add content
