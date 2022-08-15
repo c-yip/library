@@ -101,12 +101,19 @@ mainContent.onload = displayLibrary();
 function displayNewBook() {
   newDiv = document.createElement('div');
   newBook = myLibrary.at(-1);
+  if (newBook.read == 'yes') {
+    readButton = 
+      `<button class="readButton">Read</button>`
+  } else {
+    readButton = 
+      `<button class="notReadButton">Not Read</button>`
+  }
   libraryContent = `
   <div class="card">
     <h2>Title: ${newBook.title}</h2>
     <h2>Author: ${newBook.author}</h2>
     <h2>Pages: ${newBook.pages}</h2>
-    <h2>Read?: ${newBook.read}</h2>
+    ${readButton}
   </div>
   `;
   newDiv.innerHTML = libraryContent;
