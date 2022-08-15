@@ -75,12 +75,19 @@ form.addEventListener('submit', e => {
 function displayLibrary() {
   myLibrary.forEach(book => {
     newDiv = document.createElement('div');
+    if (book.read == 'yes') {
+      readButton = 
+        `<button class="readButton">Read</button>`
+    } else {
+      readButton = 
+        `<button class="notReadButton">Not Read</button>`
+    }
     libraryContent = `
       <div class="card">
         <h2>Title: ${book.title}</h2>
         <h2>Author: ${book.author}</h2>
         <h2>Pages: ${book.pages}</h2>
-        <h2>Read?: ${book.read}</h2>
+        ${readButton}
       </div>
       `;
     newDiv.innerHTML = libraryContent;
