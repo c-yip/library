@@ -1,3 +1,30 @@
+.content {
+  display:grid;
+  grid-template-areas: 
+    "header header header header"
+    "side main main main"
+    "footer footer footer footer"
+  ;
+}
+
+.header {
+  grid-area: header;
+  background-color: #64748b;
+}
+
+.sidebar {
+  grid-area: side;
+  background-color: #94a3b8;
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.footer {
+  grid-area: footer;
+  background-color: black;
+}
 
 /* form */
 form {
