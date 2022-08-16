@@ -95,7 +95,7 @@ function displayLibrary() {
   });
 }
 
-mainContent.onload = displayLibrary();
+mainContent.onload = displayLibrary(), readButtonFunction();
 
 // display new book
 function displayNewBook() {
@@ -118,20 +118,24 @@ function displayNewBook() {
   `;
   newDiv.innerHTML = libraryContent;
   mainContent.appendChild(newDiv);
+  readButtonFunction();
 }
 
 // change read status button click
-readButton = document.querySelectorAll('.readButton');
+function readButtonFunction(){
+  readButton = document.querySelectorAll('.readButton');
+  console.log(readButton)
 
-readButton.forEach(button => {
-  button.addEventListener('click', e => {
-    if (e.target.classList.value == 'readButton read') {
-      e.target.classList.replace('read', 'unread');
-      e.target.textContent = 'Not Read';
-    } else {
-      e.target.classList.replace('unread', 'read');
-      e.target.textContent = 'Read';
-    }
-    console.log(e.target.classList.value);
+  readButton.forEach(button => {
+    button.addEventListener('click', e => {
+      if (e.target.classList.value == 'readButton read') {
+        e.target.classList.replace('read', 'unread');
+        e.target.textContent = 'Not Read';
+      } else {
+        e.target.classList.replace('unread', 'read');
+        e.target.textContent = 'Read';
+      }
+      console.log(e.target.classList.value);
+    })
   })
-})
+}
