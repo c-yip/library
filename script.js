@@ -128,7 +128,7 @@ function readButtonFunction(){
 
   readButton.forEach(button => {
     button.addEventListener('click', e => {
-      if (e.target.classList.value == 'readButton read') {
+      if (e.target.classList.contains('read')) {
         e.target.classList.replace('read', 'unread');
         e.target.textContent = 'Not Read';
       } else {
