@@ -39,12 +39,14 @@ form.addEventListener('submit', e => {
   console.log(myLibrary);
 
   displayNewBook();
+  displayLibrary()
 });
 
 // add entire library to main content
 function displayLibrary() {
   myLibrary.forEach(book => {
     newDiv = document.createElement('div');
+    newDiv.classList.add("card")
     if (book.read == 'yes') {
       readButton = 
         `<button class="readButton read">Read</button>`
@@ -53,15 +55,13 @@ function displayLibrary() {
         `<button class="readButton unread">Not Read</button>`
     }
     libraryContent = `
-      <div class="card">
-        <button class="close">X</button>
-        <div class="card-text">
-          <h2>Title: ${book.title}</h2>
-          <h2>Author: ${book.author}</h2>
-          <h2>Pages: ${book.pages}</h2>
-        </div>
-        ${readButton}
+      <button class="close">X</button>
+      <div class="card-text">
+        <h2>Title: ${book.title}</h2>
+        <h2>Author: ${book.author}</h2>
+        <h2>Pages: ${book.pages}</h2>
       </div>
+      ${readButton}
       `;
     newDiv.innerHTML = libraryContent;
     mainContent.appendChild(newDiv);
@@ -70,30 +70,12 @@ function displayLibrary() {
 
 mainContent.onload = displayLibrary();
 
-// display new book
+// replaces library display to add new book
 function displayNewBook() {
-  newDiv = document.createElement('div');
-  newBook = myLibrary.at(-1);
-  if (newBook.read == 'yes') {
-    readButton = 
-      `<button class="readButton read">Read</button>`
-  } else {
-    readButton = 
-      `<button class="readButton unread">Not Read</button>`
-  }
-  libraryContent = `
-    <div class="card">
-      <button class="close">X</button>
-      <div class="card-text">
-        <h2>Title: ${newBook.title}</h2>
-        <h2>Author: ${newBook.author}</h2>
-        <h2>Pages: ${newBook.pages}</h2>
-      </div>
-      ${readButton}
-    </div>
-    `;
-  newDiv.innerHTML = libraryContent;
-  mainContent.appendChild(newDiv);
+    let card = document.querySelectorAll('.card');
+    card.forEach(card => {
+      card.remove();
+    })
 }
 
 document.addEventListener('click', e => {
@@ -110,12 +92,11 @@ document.addEventListener('click', e => {
 })
 
 // delete book object from library
-let deleteBook = document.querySelectorAll('.close')
 document.addEventListener('click', e => {
   if (e.target.classList.contains('close')) {
-    let card = document.querySelectorAll('.card');
+    let card = document.querySelector('.card');
     console.log(card);
-    // card.remove();
+    card.remove();
     console.log(myLibrary);
   }
 })
