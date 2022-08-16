@@ -5,13 +5,6 @@ let myLibrary = [
     author: 'Frank Herbert',
     pages: '412',
     read: 'yes',
-    info: function () {
-      if (this.read === false) {
-          return `The ${title} by ${author}, ${pages} pages, not read yet`;
-      } else {
-          return `The ${title} by ${author}, ${pages} pages, has been read`;
-      }
-    }
   },
 
   {
@@ -19,13 +12,6 @@ let myLibrary = [
     author: 'J. R. R. Tolkien',
     pages: '310',
     read: 'no',
-    info: function () {
-      if (this.read === false) {
-          return `The ${title} by ${author}, ${pages} pages, not read yet`;
-      } else {
-          return `The ${title} by ${author}, ${pages} pages, has been read`;
-      }
-    }
   }
 ];
 
@@ -35,22 +21,6 @@ function Book(title, author, pages, read) {
   this.author = author;
   this.pages = pages;
   this.read = read;
-  this.info = function () {
-    if (this.read === false) {
-        return `The ${title} by ${author}, ${pages} pages, not read yet`;
-    } else {
-        return `The ${title} by ${author}, ${pages} pages, has been read`;
-    }
-  }
-}
-
-// prototypes for read status 
-Book.prototype.readTrue = function() {
-    this.read = true;
-}
-
-Book.prototype.readFalse = function() {
-    this.read = false;
 }
 
 // adds book to library
@@ -139,3 +109,5 @@ document.addEventListener('click', e => {
       console.log('tally');
   }
 })
+
+// delete book object from library
