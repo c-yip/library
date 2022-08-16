@@ -5,6 +5,7 @@ let myLibrary = [
     author: 'Frank Herbert',
     pages: '412',
     read: 'yes',
+    idNum: -1
   },
 
   {
@@ -12,15 +13,18 @@ let myLibrary = [
     author: 'J. R. R. Tolkien',
     pages: '310',
     read: 'no',
+    idNum: -2
   }
 ];
 
+let id = null;
 // object constructor for library
 function Book(title, author, pages, read) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
+  this.idNum = ++id;
 }
 
 // adds book to library
@@ -39,7 +43,7 @@ form.addEventListener('submit', e => {
   console.log(myLibrary);
 
   displayNewBook();
-  displayLibrary()
+  displayLibrary();
 });
 
 // add entire library to main content
@@ -55,7 +59,7 @@ function displayLibrary() {
         `<button class="readButton unread">Not Read</button>`
     }
     libraryContent = `
-      <button class="close">X</button>
+      <button class="close" data-id="${book.idNum}">X</button>
       <div class="card-text">
         <h2>Title: ${book.title}</h2>
         <h2>Author: ${book.author}</h2>
@@ -94,9 +98,9 @@ document.addEventListener('click', e => {
 // delete book object from library
 document.addEventListener('click', e => {
   if (e.target.classList.contains('close')) {
-    let card = document.querySelector('.card');
-    console.log(card);
-    card.remove();
-    console.log(myLibrary);
+    let selected = e.target.dataset.id;
+    console.log(selected);
+    displayNewBook();
+    displayLibrary();
   }
 })
