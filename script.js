@@ -68,7 +68,7 @@ function displayLibrary() {
   });
 }
 
-mainContent.onload = displayLibrary(), readButtonFunction();
+mainContent.onload = displayLibrary();
 
 // display new book
 function displayNewBook() {
@@ -94,13 +94,6 @@ function displayNewBook() {
     `;
   newDiv.innerHTML = libraryContent;
   mainContent.appendChild(newDiv);
-  readButtonFunction();
-}
-
-// change read status button click
-function readButtonFunction(){
-  readButton = document.querySelectorAll('.readButton');
-  console.log(readButton)
 }
 
 document.addEventListener('click', e => {
@@ -120,6 +113,9 @@ document.addEventListener('click', e => {
 let deleteBook = document.querySelectorAll('.close')
 document.addEventListener('click', e => {
   if (e.target.classList.contains('close')) {
+    let card = document.querySelectorAll('.card');
+    console.log(card);
+    // card.remove();
     console.log(myLibrary);
   }
 })
