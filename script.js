@@ -100,6 +100,12 @@ document.addEventListener('click', e => {
   if (e.target.classList.contains('close')) {
     let selected = e.target.dataset.id;
     console.log(selected);
+    const indexOfObject = myLibrary.findIndex(object => {
+      return object.idNum == `${selected}`;
+    });
+    console.log(indexOfObject);
+    myLibrary.splice(indexOfObject, 1);
+    console.log(myLibrary);
     displayNewBook();
     displayLibrary();
   }
