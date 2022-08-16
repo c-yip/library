@@ -119,3 +119,23 @@ function displayNewBook() {
   newDiv.innerHTML = libraryContent;
   mainContent.appendChild(newDiv);
 }
+
+// change read status button click
+let readButtonClass = document.querySelectorAll('.readButton');
+let notReadButton = document.querySelectorAll('.notReadButton');
+
+readButtonClass.forEach(button => {
+  button.addEventListener('click', e => {
+    e.target.classList.replace('readButton', 'notReadButton');
+    e.target.textContent = 'Not Read';
+    console.log(e.target);
+  })
+})
+
+notReadButton.forEach(button => {
+  button.addEventListener('click', e => {
+    e.target.classList.replace('notReadButton', 'readButton');
+    e.target.textContent = 'Read';
+    console.log(e.target);
+  })
+})
