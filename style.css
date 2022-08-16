@@ -103,6 +103,7 @@ input[type="submit"] {
   grid-template-columns: 1fr auto;
   grid-template-areas: 
     "card-text close"
+    "card-text ."
     "button button"
     ;
   border-radius: 8px;
@@ -128,6 +129,8 @@ input[type="submit"] {
   grid-area: close;
   color: red;
   cursor: pointer;
+  background-color: white;
+  border: none;
 }
 
 .card-text {

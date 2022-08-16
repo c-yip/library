@@ -54,9 +54,7 @@ function displayLibrary() {
     }
     libraryContent = `
       <div class="card">
-        <div class="close">
-          <h2>X</h2>
-        </div>
+        <button class="close">X</button>
         <div class="card-text">
           <h2>Title: ${book.title}</h2>
           <h2>Author: ${book.author}</h2>
@@ -85,9 +83,7 @@ function displayNewBook() {
   }
   libraryContent = `
     <div class="card">
-      <div class="close">
-        <h2>X</h2>
-      </div>
+      <button class="close">X</button>
       <div class="card-text">
         <h2>Title: ${newBook.title}</h2>
         <h2>Author: ${newBook.author}</h2>
@@ -121,3 +117,9 @@ document.addEventListener('click', e => {
 })
 
 // delete book object from library
+let deleteBook = document.querySelectorAll('.close')
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('close')) {
+    console.log(myLibrary);
+  }
+})
