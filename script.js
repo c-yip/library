@@ -77,10 +77,10 @@ function displayLibrary() {
     newDiv = document.createElement('div');
     if (book.read == 'yes') {
       readButton = 
-        `<button class="readButton">Read</button>`
+        `<button class="readButton read">Read</button>`
     } else {
       readButton = 
-        `<button class="notReadButton">Not Read</button>`
+        `<button class="readButton unread">Not Read</button>`
     }
     libraryContent = `
       <div class="card">
@@ -103,10 +103,10 @@ function displayNewBook() {
   newBook = myLibrary.at(-1);
   if (newBook.read == 'yes') {
     readButton = 
-      `<button class="readButton">Read</button>`
+      `<button class="readButton read">Read</button>`
   } else {
     readButton = 
-      `<button class="notReadButton">Not Read</button>`
+      `<button class="readButton unread">Not Read</button>`
   }
   libraryContent = `
   <div class="card">
@@ -121,21 +121,17 @@ function displayNewBook() {
 }
 
 // change read status button click
-let readButtonClass = document.querySelectorAll('.readButton');
-let notReadButton = document.querySelectorAll('.notReadButton');
+readButton = document.querySelectorAll('.readButton');
 
-readButtonClass.forEach(button => {
+readButton.forEach(button => {
   button.addEventListener('click', e => {
-    e.target.classList.replace('readButton', 'notReadButton');
-    e.target.textContent = 'Not Read';
-    console.log(e.target);
-  })
-})
-
-notReadButton.forEach(button => {
-  button.addEventListener('click', e => {
-    e.target.classList.replace('notReadButton', 'readButton');
-    e.target.textContent = 'Read';
-    console.log(e.target);
+    if (e.target.classList.value == 'readButton read') {
+      e.target.classList.replace('read', 'unread');
+      e.target.textContent = 'Not Read';
+    } else {
+      e.target.classList.replace('unread', 'read');
+      e.target.textContent = 'Read';
+    }
+    console.log(e.target.classList.value);
   })
 })

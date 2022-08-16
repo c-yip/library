@@ -106,10 +106,10 @@ input[type="submit"] {
   padding: 10px;
 }
 
-.readButton {
+.readButton.read {
   background-color: rgb(150, 230, 150);
 }
 
-.notReadButton {
+.readButton.unread {
   background-color: rgb(255, 139, 139);
 }
