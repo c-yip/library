@@ -125,9 +125,10 @@ function displayNewBook() {
 function readButtonFunction(){
   readButton = document.querySelectorAll('.readButton');
   console.log(readButton)
+}
 
-  readButton.forEach(button => {
-    button.addEventListener('click', e => {
+document.addEventListener('click', e => {
+  if (e.target.classList.contains('readButton')) {
       if (e.target.classList.contains('read')) {
         e.target.classList.replace('read', 'unread');
         e.target.textContent = 'Not Read';
@@ -135,7 +136,6 @@ function readButtonFunction(){
         e.target.classList.replace('unread', 'read');
         e.target.textContent = 'Read';
       }
-      console.log(e.target.classList.value);
-    })
-  })
-}
+      console.log('tally');
+  }
+})
