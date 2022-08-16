@@ -94,6 +94,7 @@ input[type="submit"] {
     border: none;
     border-width: 1px 1px 3px;
     margin-bottom: 10px;
+    cursor: pointer;
 }
 
 .card {
@@ -111,6 +112,7 @@ input[type="submit"] {
 
 .readButton {
   grid-area: button;
+  cursor: pointer;
 }
 
 .readButton.read {
@@ -124,6 +126,7 @@ input[type="submit"] {
 .close {
   grid-area: close;
   color: red;
+  cursor: pointer;
 }
 
 .card-text {
