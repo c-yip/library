@@ -54,9 +54,14 @@ function displayLibrary() {
     }
     libraryContent = `
       <div class="card">
-        <h2>Title: ${book.title}</h2>
-        <h2>Author: ${book.author}</h2>
-        <h2>Pages: ${book.pages}</h2>
+        <div class="close">
+          <h2>X</h2>
+        </div>
+        <div class="card-text">
+          <h2>Title: ${book.title}</h2>
+          <h2>Author: ${book.author}</h2>
+          <h2>Pages: ${book.pages}</h2>
+        </div>
         ${readButton}
       </div>
       `;
