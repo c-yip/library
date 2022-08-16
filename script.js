@@ -84,13 +84,18 @@ function displayNewBook() {
       `<button class="readButton unread">Not Read</button>`
   }
   libraryContent = `
-  <div class="card">
-    <h2>Title: ${newBook.title}</h2>
-    <h2>Author: ${newBook.author}</h2>
-    <h2>Pages: ${newBook.pages}</h2>
-    ${readButton}
-  </div>
-  `;
+    <div class="card">
+      <div class="close">
+        <h2>X</h2>
+      </div>
+      <div class="card-text">
+        <h2>Title: ${newBook.title}</h2>
+        <h2>Author: ${newBook.author}</h2>
+        <h2>Pages: ${newBook.pages}</h2>
+      </div>
+      ${readButton}
+    </div>
+    `;
   newDiv.innerHTML = libraryContent;
   mainContent.appendChild(newDiv);
   readButtonFunction();
