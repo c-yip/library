@@ -19,12 +19,14 @@ let myLibrary = [
 
 let id = null;
 // object constructor for library
-function Book(title, author, pages, read) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.read = read;
-  this.idNum = ++id;
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+    this.idNum = ++id;
+  }
 }
 
 // adds book to library
