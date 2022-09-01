@@ -1,3 +1,6 @@
+const titleError = document.getElementById('title-error');
+const pageError = document.getElementById('page-error');
+
 // library array
 let myLibrary = [
   {
@@ -40,7 +43,21 @@ form.addEventListener('submit', e => {
   let pages = document.querySelector('#page-numbers').value;
   let read = document.querySelector('#read');
   let value = read.options[read.selectedIndex].value;
-  console.log(value);
+
+  // form validation
+  let error = false;
+  if (title.length <= 1) {
+    titleError.innerHTML = 'Title must be greater than one character.';
+    error = true;
+  }
+  if (pages <= 0) {
+    pageError.innerHTML = 'Pages must be greater than zero.';
+    error = true;
+  }
+  if (error == true) {
+    return;
+  }
+  
   myLibrary.push(new Book(title, author, pages, value));
   console.log(myLibrary);
 

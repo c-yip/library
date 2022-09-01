@@ -20,13 +20,15 @@
         <div class="sidebar">
             <form action="">
                 <label for="book-title">Title</label>
-                <input type="text" id="book-title" name="book-title">
+                <input type="text" id="book-title" name="book-title" required>
+                <div id="title-error"></div>
                 
                 <label for="author">Author</label>
-                <input type="text" id="author" name="author">
+                <input type="text" id="author" name="author" required>
                 
                 <label for="page-numbers">Pages</label>
-                <input type="number" name="page-numbers" id="page-numbers">
+                <input type="number" name="page-numbers" id="page-numbers" required>
+                <div id="page-error"></div>
         
                 <label for="read">Have you read this book?</label>
                 <select name="read" id="read">
