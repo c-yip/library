@@ -47,20 +47,24 @@ form.addEventListener('submit', e => {
   // form validation
   let error = false;
   if (title.length <= 1) {
-    titleError.innerHTML = 'Title must be greater than one character.';
+    titleError.innerHTML = '*Title must be greater than one character.';
+    titleError.classList.add('active');
     error = true;
-  }
-  if (pages <= 0) {
-    pageError.innerHTML = 'Pages must be greater than zero.';
-    error = true;
-  }
-  if (error == true) {
-    return;
-  }
-  if (error == false) {
+  } else {
     titleError.innerHTML = '';
-    pageError.innerHTML = '';
+    titleError.classList.remove('active');
   }
+
+  if (pages <= 0) {
+    pageError.innerHTML = '*Pages must be greater than zero.';
+    pageError.classList.add('active');
+    error = true;
+  } else {
+    pageError.innerHTML = '';
+    pageError.classList.remove('active');
+  }
+  if (error == true ) return;
+  
   myLibrary.push(new Book(title, author, pages, value));
   console.log(myLibrary);
 

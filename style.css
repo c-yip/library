@@ -137,3 +137,12 @@ input[type="submit"] {
 .card-text {
   grid-area: card-text;
 }
+
+.error.active {
+  font-size: 12px;
+  font-weight: bold;
+  border: 1px solid;
+  padding: 5px;
+  color: #D8000C;
+  background-color: #FFBABA;
+}
