@@ -57,7 +57,10 @@ form.addEventListener('submit', e => {
   if (error == true) {
     return;
   }
-  
+  if (error == false) {
+    titleError.innerHTML = '';
+    pageError.innerHTML = '';
+  }
   myLibrary.push(new Book(title, author, pages, value));
   console.log(myLibrary);
 
